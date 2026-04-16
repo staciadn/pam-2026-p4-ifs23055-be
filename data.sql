@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS plants (
     efek_samping TEXT NOT NULL,
     created_at TIMESTAMP NOT NULL,
     updated_at TIMESTAMP NOT NULL
-
+    );
 
 CREATE TABLE IF NOT EXISTS dongeng (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
