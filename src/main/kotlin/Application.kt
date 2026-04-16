@@ -30,6 +30,17 @@ fun Application.module() {
 
     install(CORS) {
         anyHost()
+
+        allowMethod(HttpMethod.Get)
+        allowMethod(HttpMethod.Post)
+        allowMethod(HttpMethod.Put)
+        allowMethod(HttpMethod.Delete)
+        allowMethod(HttpMethod.Options)
+
+        allowHeader(HttpHeaders.ContentType)
+        allowHeader(HttpHeaders.Authorization)
+
+        allowNonSimpleContentTypes = true
     }
 
     install(ContentNegotiation) {
@@ -44,18 +55,6 @@ fun Application.module() {
 
     install(Koin) {
         modules(appModule)
-
-        install(CORS) {
-            anyHost() // untuk development; ganti dengan allowHost("yourdomain.com") di production
-            allowMethod(HttpMethod.Get)
-            allowMethod(HttpMethod.Post)
-            allowMethod(HttpMethod.Put)
-            allowMethod(HttpMethod.Delete)
-            allowMethod(HttpMethod.Options)
-            allowHeader(HttpHeaders.ContentType)
-            allowHeader(HttpHeaders.Authorization)
-            allowNonSimpleContentTypes = true
-        }
     }
 
     configureDatabases()
