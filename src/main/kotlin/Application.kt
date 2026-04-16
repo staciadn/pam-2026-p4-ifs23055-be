@@ -1,6 +1,8 @@
 package org.delcom
 
 import io.github.cdimascio.dotenv.dotenv
+import io.ktor.http.HttpHeaders
+import io.ktor.http.HttpMethod
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
 import io.ktor.server.netty.*
@@ -42,6 +44,18 @@ fun Application.module() {
 
     install(Koin) {
         modules(appModule)
+
+        install(CORS) {
+            anyHost() // untuk development; ganti dengan allowHost("yourdomain.com") di production
+            allowMethod(HttpMethod.Get)
+            allowMethod(HttpMethod.Post)
+            allowMethod(HttpMethod.Put)
+            allowMethod(HttpMethod.Delete)
+            allowMethod(HttpMethod.Options)
+            allowHeader(HttpHeaders.ContentType)
+            allowHeader(HttpHeaders.Authorization)
+            allowNonSimpleContentTypes = true
+        }
     }
 
     configureDatabases()

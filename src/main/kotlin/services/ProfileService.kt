@@ -15,7 +15,7 @@ class ProfileService {
             mapOf(
                 Pair("username", "stacia.siallagan"),
                 Pair("nama", "Stacia Andani Siallagan"),
-                Pair("tentang", "Saya adalah seorang developer yang tertarik pada mobile development, backend API, dan berbagai teknologi pengembangan aplikasi. Senang belajar hal baru dan membangun aplikasi yang berguna."),
+                Pair("tentang", "Saya adalah seorang wanita baik hati, imut lucu menggemaskan, sukses berkarir."),
             )
         )
         call.respond(response)

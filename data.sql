@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS plants (
     updated_at TIMESTAMP NOT NULL
 
 
-    CREATE TABLE IF NOT EXISTS dongeng (
+CREATE TABLE IF NOT EXISTS dongeng (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     judul VARCHAR(100) NOT NULL,
     path_gambar VARCHAR(255) NOT NULL,

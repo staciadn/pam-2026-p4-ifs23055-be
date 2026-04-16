@@ -36,6 +36,7 @@ dependencies {
     implementation("io.insert-koin:koin-logger-slf4j:4.1.2-Beta1")
     implementation("io.ktor:ktor-server-host-common:3.4.0")
     implementation("io.ktor:ktor-server-status-pages:3.4.0")
+    implementation("io.ktor:ktor-server-cors:${ktor_version}")
     testImplementation("io.ktor:ktor-server-test-host")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 
